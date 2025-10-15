@@ -14,43 +14,40 @@
         }
         .gallery {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
+            justify-content: center;
             margin: 20px;
         }
         .gallery img {
             max-width: 45%;
             margin: 10px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
         .caption {
             text-align: center;
+            font-size: 14px;
             margin-top: 5px;
         }
-        button {
+        .toggle-button {
             display: block;
             margin: 20px auto;
             padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
             border: none;
             border-radius: 5px;
+            cursor: pointer;
             background-color: #007BFF;
             color: white;
+            font-size: 16px;
             transition: background-color 0.3s;
         }
-        button:hover {
+        .toggle-button:hover {
             background-color: #0056b3;
-        }
-        .dark-mode {
-            background-color: #333333;
-            color: #ffffff;
         }
     </style>
 </head>
 <body>
-
+    <h1 style="text-align: center;">Responsive Image Gallery</h1>
     <div class="gallery">
         <div>
             <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Image 1">
@@ -61,16 +58,20 @@
             <div class="caption">Stunning Sunset</div>
         </div>
     </div>
-
-    <button id="toggleTheme">Toggle Theme</button>
+    <button class="toggle-button" onclick="toggleTheme()">Toggle Theme</button>
 
     <script>
-        const button = document.getElementById('toggleTheme');
-        button.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
+        function toggleTheme() {
+            const body = document.body;
+            if (body.style.backgroundColor === 'rgb(255, 255, 255)') {
+                body.style.backgroundColor = '#333333';
+                body.style.color = '#ffffff';
+            } else {
+                body.style.backgroundColor = '#ffffff';
+                body.style.color = '#000000';
+            }
+        }
     </script>
-
 </body>
 </html>
-<!-- build-id: 2025-10-15T14:34:00.101218 -->
+<!-- build-id: 2025-10-15T14:37:01.442956 -->
