@@ -14,31 +14,30 @@
         }
         .gallery {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            flex-wrap: wrap;
             margin: 20px;
         }
         .gallery img {
             max-width: 45%;
             margin: 10px;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         .caption {
             text-align: center;
-            font-size: 14px;
-            margin-top: 5px;
+            margin: 5px 0;
         }
         .toggle-button {
             display: block;
             margin: 20px auto;
             padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
             background-color: #007BFF;
             color: white;
-            font-size: 16px;
             transition: background-color 0.3s;
         }
         .toggle-button:hover {
@@ -47,31 +46,28 @@
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Responsive Image Gallery</h1>
+
     <div class="gallery">
         <div>
-            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Image 1">
-            <div class="caption">Beautiful Landscape</div>
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Gallery Image 1">
+            <div class="caption">Beautiful Landscape 1</div>
         </div>
         <div>
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Image 2">
-            <div class="caption">Stunning Sunset</div>
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Gallery Image 2">
+            <div class="caption">Beautiful Landscape 2</div>
         </div>
     </div>
+
     <button class="toggle-button" onclick="toggleTheme()">Toggle Theme</button>
 
     <script>
         function toggleTheme() {
             const body = document.body;
-            if (body.style.backgroundColor === 'rgb(255, 255, 255)') {
-                body.style.backgroundColor = '#333333';
-                body.style.color = '#ffffff';
-            } else {
-                body.style.backgroundColor = '#ffffff';
-                body.style.color = '#000000';
-            }
+            body.style.backgroundColor = body.style.backgroundColor === 'rgb(255, 255, 255)' ? '#333333' : '#ffffff';
+            body.style.color = body.style.color === 'rgb(0, 0, 0)' ? '#ffffff' : '#000000';
         }
     </script>
+
 </body>
 </html>
-<!-- build-id: 2025-10-15T14:37:01.442956 -->
+<!-- build-id: 2025-10-15T14:43:51.807386 -->
